@@ -1,0 +1,24 @@
+{
+  "name": "scrap_legifrance",
+  "version": "1.0.0",
+  "description": "Use Google Apps Script and Clasp https://developers.google.com/apps-script",
+  "main": "main.js",
+  "author": "tayflo",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "clasp push -w",
+    "open": "clasp open"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "@types/google-apps-script": "^1.0.12",
+    "eslint-plugin-googleappsscript": "^1.0.3"
+  },
+  "engines": {
+    "node": "12.16.2",
+    "npm": "6.14.4",
+    "clasp": "2.3.0"
+  }
+}

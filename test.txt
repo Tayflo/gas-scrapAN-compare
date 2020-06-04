@@ -1,0 +1,57 @@
+/* eslint-disable */
+
+// Old file to test. Can delete.
+// 163-1 and 163‑1 have differents values.
+
+let z = "Pomme abricot"
+let a = "Pomme poire abricot"
+let b = "Pomme fraise abricot"
+
+let s1 = "« Art. L. 163-1 A (nouveau). – Toute allégation ou imputation d’un fait dépourvue d’éléments vérifiables de nature à la rendre vraisemblable constitue une fausse information.";
+let s2 = "« Art. L. 163‑1 A (nouveau). – Toute allégation ou imputation d’un fait inexacte ou trompeuse constitue une fausse information.";
+
+let s3 = "l’objet social de la personne physique ou morale et de celles pour le compte desquelles, le cas échéant, elle a déclaré agir, qui verse à la plateforme des rémunérations en contrepartie de la promotion de contenus d’information se rattachant à un débat d’intérêt général ;";
+let s4 = "l’objet social des personnes morales et de celles pour le compte desquelles, le cas échéant, elle a déclaré agir, qui verse à la plateforme des rémunérations en contrepartie de la promotion de contenus d’information se rattachant à un débat d’intérêt général ;";
+
+let a_ar = s3.split(" ");
+let b_ar = s4.split(" ");
+
+let res = [];
+let j = 0;
+let k = 0;
+for (i = 0; j < a_ar.length && k < b_ar.length ; i++) {
+  c = a_ar[j];
+  d = b_ar[k];
+  if (c === d) {
+    console.log("same")
+    j++;
+    k++;
+    res.push(c);
+    continue;
+  }
+  if (b_ar.indexOf(c) === -1) {
+    console.log("del");
+    j++;
+    res.push("-"+c);
+  }
+  else {
+    console.log("add");
+    k++;
+    res.push("+"+d);
+  }
+}
+console.log(res.join(' '));
+
+const x = "XMJYAUZ".split('');
+const y = "MZJAWXU".split('');
+const a1 = "pomme pomme pêche poire abricot pêche pomme";
+const a2 = "pêche poire pêche poire pomme poire pomme";
+const s5 = "transparente sur l’identité, le siège social et l’objet social de la personne physique ou morale et de";
+const s6 = "transparente sur l’identité de la personne physique ou sur la raison sociale, le siège social et l’objet social des personnes morales et de";
+// Treat punctuation signs as plain words.
+const aa = s3.replace(/([,.])/g, " $1").split(" ");
+const bb = s4.replace(/([,.])/g, " $1").split(" ");
+const c = getDiff(a, b);
+// c = c.map(e => e.value).join(" ").replace(/ ([,.])/g, "$1");
+console.log(c);
+console.log(regroupDiffType(c));
