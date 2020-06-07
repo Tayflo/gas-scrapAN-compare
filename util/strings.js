@@ -27,6 +27,10 @@ function normalizeString(string) {
   // rq: Is the 'u' flag supported?
   string = string.replace(/(''|[\u0022\uFF02\u301D\u301E\u301F]|[\u201C\u201F\u275D\u{1F676}]|[\u201D\u201E\u275E\u{1F678}\u2760\u{1F677}\u2E42]|(<<|[\u00AB]) ?| ?(>>|[\u00BB]))/gu, '\u0022');
 
+  // TODO: Lower case when cap after a lower char
+  // ex: DISPOSITIONS MODIFIANT LA LOI du 30 septembre 1986 relative À la libertÉ de communication
+  // ex: Devoir de coopÉration des opÉrateurs de plateforme en ligne en matiÈre de lutte contre la diffusion de fausses informations
+
   string = string.normalize(); // useful ?
   string = string.trim();
   return string;
