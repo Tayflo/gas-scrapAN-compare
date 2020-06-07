@@ -30,6 +30,8 @@ function normalizeString(string) {
   // TODO: Lower case when cap after a lower char
   // ex: DISPOSITIONS MODIFIANT LA LOI du 30 septembre 1986 relative À la libertÉ de communication
   // ex: Devoir de coopÉration des opÉrateurs de plateforme en ligne en matiÈre de lutte contre la diffusion de fausses informations
+  // ex: Dispositions relatives À l'Éducation aux mÉdias et À l'information
+  // rq: Concerne seulement les TITRES, écrits partiellement en majuscules seulement, apparaissant comme tel par la mise en forme de leur élément
 
   string = string.normalize(); // useful ?
   string = string.trim();
